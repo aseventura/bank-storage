@@ -10,6 +10,7 @@ def storage_information_view(request):
             'who_entered': person.passcard.owner_name,
             'entered_at': person.entered_at,
             'duration': person.format_duration(),
+            'is_strange': person.is_visit_long(),
         }
         non_closed_visits.append(view_info)
 
