@@ -40,4 +40,4 @@ class Visit(models.Model):
     def is_visit_long(self, suspect_minutes=60):
         duration = self.get_duration()
         minutes_in_storage = int(duration.total_seconds() / 60)
-        return True if minutes_in_storage > suspect_minutes else False
+        return minutes_in_storage > suspect_minutes
